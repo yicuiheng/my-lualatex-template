@@ -1,0 +1,70 @@
+%
+% This code is licensed under CC0.
+% http://creativecommons.org/publicdomain/zero/1.0/deed
+%
+
+\documentclass[lualatex,a4paper,ja=standard]{bxjsarticle}
+
+\usepackage{style/common}
+
+\begin{document}
+
+\input{src/title}
+
+% \chapter{オレオレ lualatex テンプレートの説明}
+
+\section{ビルド方法}
+
+\par ビルドには llmk \footnote{https://github.com/wtsnjp/llmk} を使っています．
+llmkのおかげで \LaTeX コードのビルド手順を TOML 形式で記述することができます．
+その他にもなんか色々とデフォルトの設定をモダンなかんじにしてくれてます．
+\LaTeX に詳しくない筆者は取り敢えず llmk を使って \LaTeX 詳しい人が選んだモダンな設定におまかせしています．
+
+\par この プロジェクトをビルドするにはプロジェクトディレクトリで
+\begin{minted}{bash}
+$ llmk
+\end{minted}
+を実行してください．llmkが \code{./llmk.toml} に基づいて \code{./main.tex} をコンパイルしてくれます．
+うまくいけば \code{./build/main.pdf} が生成されるはずです．
+
+\section{ディレクトリ構成}
+
+\dirtree{%
+  .1 {\faFolder\ ./}.
+  .2 {\faFolder\ .vscode \DTcomment{VSCode の設定}}.
+  .2 {\faFolder\ build \DTcomment{生成物が置かれる場所}}.
+  .3 {\faFile\ main.pdf \DTcomment{メインの生成物}}.
+  .3 {\dots\dots}.
+  .2 {\faFolder\ src \DTcomment{\LaTeX ソースコードを置く場所}}.
+  .3 {\faFile\ title.tex \DTcomment{表紙の \LaTeX ソースコード}}.
+  .3 {\dots\dots}.
+  .2 {\faFolder\ style \DTcomment{スタイルファイルを置く場所}}.
+  .3 {\faFile\ common.sty \DTcomment{普遍的に使うマクロやフォントの設定}}.
+  .3 {\dots\dots}.
+  .2 {\faFile\ llmk.toml \DTcomment{ビルドの設定ファイル}}.
+  .2 {\faFile\ main.tex \DTcomment{トップレベルの \LaTeX ソースコード}}.
+  .2 {\faFile\ main.bib \DTcomment{参考文献データ}}.
+}
+
+\section{フォントなど}
+
+\par 地の文にはUDデジタル教科書体を使っています．
+\par あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+
+―――宮沢賢治『ポラーノの広場』より―――
+
+\par The quick brown fox jumps over the lazy dog
+
+\par 数式には $\mathrm{STIX2}$ フォントを使っています．
+
+\begin{align}
+  \int_0^{\mathrm{\pi}} \sin x \, \mathrm{d}x = 2 \\
+  \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}
+\end{align}
+
+\input{src/code.tex}
+
+\renewcommand{\bibname}{参考文献}
+\printbibliography
+
+\end{document}

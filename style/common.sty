@@ -1,0 +1,49 @@
+%
+% This code is licensed under CC0.
+% http://creativecommons.org/publicdomain/zero/1.0/deed
+%
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{main.bib}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{xcolor}
+\usepackage{diffcoeff}
+\usepackage{booktabs}
+\usepackage{mleftright}
+\usepackage[cache=false,outputdir=build]{minted}
+\usepackage{dirtree}
+
+\usepackage{fontawesome}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,theorems,skins,listings,minted}
+
+\usepackage{silence}
+\WarningFilter{latexfont}{Some font shapes were not available, defaults substituted.}
+\WarningFilter{latexfont}{Font shape `TU/UDDigiKyokashoNK-R(1)}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{luatexja-fontspec}
+\newjfontface{\nonproportional}{UD Digi Kyokasho N-R}[YokoFeatures={JFM=ujis}]
+\setmainjfont[CharacterWidth=Proportional,%
+  ItalicFont={UD Digi Kyokasho NK-R},%
+  ItalicFeatures={FakeSlant=0.27},%
+  SlantedFont={UD Digi Kyokasho NK-R},%
+  SlantedFeatures={FakeSlant=0.18},%
+  BoldFont={UD Digi Kyokasho NK-B},%
+  BoldSlantedFont={UD Digi Kyokasho NK-B},%
+  BoldSlantedFeatures={FakeSlant=0.18},%
+  BoldItalicFont={UD Digi Kyokasho NK-B},%
+  BoldItalicFeatures={FakeSlant=0.27},%
+  YokoFeatures={JFM=prop}]{UD Digi Kyokasho NK-R}
+
+\setmainfont{UD Digi Kyokasho NK-R}
+\setmonofont{inconsolata}
+\usepackage[notext]{stix2}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\newcommand{\TODO}[1]{\textcolor{red}{TODO: #1}}
