@@ -11,8 +11,6 @@
 
 \input{src/title}
 
-% \chapter{オレオレ lualatex テンプレートの説明}
-
 \section{ビルド方法}
 
 \par ビルドには llmk \footnote{https://github.com/wtsnjp/llmk} を使っています．
@@ -21,9 +19,10 @@ llmkのおかげで \LaTeX コードのビルド手順を TOML 形式で記述�
 \LaTeX に詳しくない筆者は取り敢えず llmk を使って \LaTeX 詳しい人が選んだモダンな設定におまかせしています．
 
 \par この プロジェクトをビルドするにはプロジェクトディレクトリで
-\begin{minted}{bash}
-$ llmk
-\end{minted}
+\begin{program}{bash}{bash}
+  $ llmk
+\end{program}
+
 を実行してください．llmkが \code{./llmk.toml} に基づいて \code{./main.tex} をコンパイルしてくれます．
 うまくいけば \code{./build/main.pdf} が生成されるはずです．
 
@@ -62,6 +61,7 @@ $ llmk
   \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}
 \end{align}
 
+\input{src/math.tex}
 \input{src/code.tex}
 
 \renewcommand{\bibname}{参考文献}

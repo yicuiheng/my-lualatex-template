@@ -46,4 +46,56 @@
 
 \newcommand{\code}[1]{\texttt{#1}}
 
+
+\definecolor{linenocol}{RGB}{100,100,100}
+
+\renewcommand{\theFancyVerbLine}{\color{linenocol}\arabic{FancyVerbLine}}
+\newtcblisting{program}[3][]{%
+  listing engine=minted,
+  minted language=#2,
+  listing only,
+  breakable,
+  enhanced,
+  boxrule=0pt,bottomrule=2pt,toprule=2pt,
+  sharp corners,
+  drop fuzzy shadow,
+  title=\hspace*{-1em}\code{</>} \quad #3,
+  minted options = {
+      #1,
+      breaklines=true,
+      breakbefore=.,
+      numbersep=2mm
+    },
+  overlay={%
+      \begin{tcbclipinterior}
+        \fill[gray!25] (frame.south west) rectangle ([xshift=4mm]frame.north west);
+      \end{tcbclipinterior}
+    }
+}
+
+\definecolor{thmcol}{RGB}{232,56,57} % red
+\definecolor{lemcol}{RGB}{2,77,98} % green
+\definecolor{defcol}{RGB}{20,13,74} % blue
+
+\tcbset{theoremtemplate/.style={%
+      enhanced,
+      boxrule=0pt,bottomrule=2pt,toprule=2pt,
+      sharp corners,
+      drop fuzzy shadow,
+      breakable
+    }}
+
+\newtcbtheorem[number within=section]{theorem}{定理}{theoremtemplate,colframe=thmcol}{thm}
+\newcommand{\thmref}[1]{定理~\ref{thm:#1}}
+\newtcbtheorem[use counter from=theorem]{proposition}{命題}{theoremtemplate,colframe=thmcol}{prop}
+\newcommand{\propref}[1]{命題~\ref{prop:#1}}
+\newtcbtheorem[use counter from=theorem]{corollary}{系}{theoremtemplate,colframe=thmcol}{cor}
+\newcommand{\corref}[1]{系~\ref{cor:#1}}
+
+\newtcbtheorem[use counter from=theorem]{definition}{定義}{theoremtemplate,colframe=defcol}{def}
+\newcommand{\defref}[1]{定義~\ref{def:#1}}
+
+\newtcbtheorem[use counter from=theorem]{lemma}{補題}{theoremtemplate,colframe=lemcol}{lem}
+\newcommand{\lemref}[1]{補題~\ref{lem:#1}}
+
 \newcommand{\TODO}[1]{\textcolor{red}{TODO: #1}}

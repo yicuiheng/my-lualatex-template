@@ -3,74 +3,17 @@
 % http://creativecommons.org/publicdomain/zero/1.0/deed
 %
 
+\section{プログラミング関係}
+
 \par プログラムのフォントには \code{inconsolata} を使っています．
-\par インラインコードの例:  \code{hoge + fuga = piyo}
+\par インラインコードの例:  \verb|\code{hoge + fuga = piyo}| で \code{hoge + fuga = piyo} と表示されます.
 \par 複数行にまたがるコードの例:
 
-\definecolor{linenocol}{RGB}{100,100,100}
-
-\renewcommand{\theFancyVerbLine}{\color{linenocol}\arabic{FancyVerbLine}}
-\newtcblisting{myminted}{%
-  listing engine=minted,
-  minted language=c,
-  listing only,
-  breakable,
-  enhanced,
-  boxrule=0pt,bottomrule=2pt,toprule=2pt,
-  sharp corners,
-  drop fuzzy shadow,
-  title=\hspace*{-1em}\code{</>} \quad bash,
-  minted options = {
-      linenos,
-      breaklines=true,
-      breakbefore=.,
-      numbersep=2mm
-    },
-  overlay={%
-      \begin{tcbclipinterior}
-        \fill[gray!25] (frame.south west) rectangle ([xshift=4mm]frame.north west);
-      \end{tcbclipinterior}
-    }
-}
-
-\begin{myminted}
-  fun main() {
+\begin{program}[linenos]{c}{sample}
+  func main() {
       let a = 12
       let b = 30
       a + b
     }
-\end{myminted}
+\end{program}
 
-\definecolor{theo}{RGB}{232,56,57} % red
-\definecolor{lem}{RGB}{2,77,98} % green
-\definecolor{def}{RGB}{20,13,74} % blue
-
-\begin{tcolorbox}[enhanced,
-    boxrule=0pt,bottomrule=2pt,toprule=2pt,
-    colframe=theo,
-    sharp corners,
-    drop fuzzy shadow,
-    title=中間値の定理]
-  区間 $[\alpha, \beta]$ で連続な関数 $f(x)$ について，$f(\alpha)$ と $f(\beta)$ の間にある任意の実数 $c$ に対して，
-  ある実数 $k \in (\alpha, \beta)$ を $f(k) = c$ を満たすようにとることができる
-\end{tcolorbox}
-
-\begin{tcolorbox}[enhanced,
-    boxrule=0pt,bottomrule=2pt,toprule=2pt,
-    colframe=lem,
-    sharp corners,
-    drop fuzzy shadow,
-    title=中間値の定理]
-  区間 $[\alpha, \beta]$ で連続な関数 $f(x)$ について，$f(\alpha)$ と $f(\beta)$ の間にある任意の実数 $c$ に対して，
-  ある実数 $k \in (\alpha, \beta)$ を $f(k) = c$ を満たすようにとることができる
-
-\end{tcolorbox}
-\begin{tcolorbox}[enhanced,
-    boxrule=0pt,bottomrule=2pt,toprule=2pt,
-    colframe=def,
-    sharp corners,
-    drop fuzzy shadow,
-    title=中間値の定理]
-  区間 $[\alpha, \beta]$ で連続な関数 $f(x)$ について，$f(\alpha)$ と $f(\beta)$ の間にある任意の実数 $c$ に対して，
-  ある実数 $k \in (\alpha, \beta)$ を $f(k) = c$ を満たすようにとることができる
-\end{tcolorbox}
