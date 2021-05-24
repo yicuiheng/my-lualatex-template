@@ -8,15 +8,27 @@
 \begin{lemma}{なにかの補題}{nanika}
   あんじゃらかんじゃら
 \end{lemma}
-\par \defref{nanika} より即座に成り立つ．
+\begin{proof}
+  \defref{nanika} より即座に成り立つ．
+\end{proof}
 
 \begin{theorem}{なにかの定理}{nanika}
   なんじゃらほい
 \end{theorem}
-% \begin{proof}
-\par \lemref{nanika} より成り立つ．
-% \end{proof}
 
-こんなかんじ．
+\begin{proof}
+  これを証明するに先だって次の補題を証明する．
+  \begin{lemma}{スーパーなにかの補題}{supernanika}
+    スーパーあんじゃらかんじゃら
+  \end{lemma}
+  \begin{proof}
+    内側の証明だよ～
+  \end{proof}
+  \lemref{nanika} と \lemref{supernanika} より成り立つ．
+\end{proof}
 
-\par proof環境も定義したい！
+\par これらの環境は ぱるちさんのブログ記事
+「tcolorboxのお誘い」 \footnote{https://marukunalufd0123.hatenablog.com/entry/2019/03/15/071717} と
+「ぼくのかんがえたさいきょうのゼミ用TeXスタイル」 \footnote{https://marukunalufd0123.hatenablog.com/entry/saikyou1}
+を参考にして tcolorbox で作っています．
+

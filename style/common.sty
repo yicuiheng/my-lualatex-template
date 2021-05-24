@@ -98,4 +98,15 @@
 \newtcbtheorem[use counter from=theorem]{lemma}{補題}{theoremtemplate,colframe=lemcol}{lem}
 \newcommand{\lemref}[1]{補題~\ref{lem:#1}}
 
+\newenvironment{proof}
+  {\begin{tcolorbox}[enhanced,
+    breakable,
+    sharp corners,
+    boxrule=-1pt,
+    leftrule=4pt]
+  \par \hspace{-1em}\textbf{\fontsize{1.1em}{0cm} 証明} \ }
+  {\\
+    \vspace*{-6pt}\hspace*{\fill} (証明終)
+    \end{tcolorbox}}
+
 \newcommand{\TODO}[1]{\textcolor{red}{TODO: #1}}
